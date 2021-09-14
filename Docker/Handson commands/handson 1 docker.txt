@@ -1,0 +1,31 @@
+Microsoft Windows [Version 10.0.19042.1165]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\ASUS>docker image ls
+REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
+debian       latest    82bd5ee7b1c5   11 days ago     124MB
+alpine/git   latest    b8f176fa3f0d   3 months ago    25.1MB
+nginx        1.17.5    540a289bab6c   23 months ago   126MB
+
+C:\Users\ASUS>docker container ls -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED             STATUS                         PORTS                                   NAMES
+374fdf82e90e   nginx:1.17.5   "nginx -g 'daemon of…"   23 minutes ago      Up 19 minutes                  0.0.0.0:8085->80/tcp, :::8085->80/tcp   my-nginx
+99b32561f8e2   debian         "bash"                   59 minutes ago      Exited (0) 51 minutes ago                                              lucid_hopper
+600abfbf138f   debian         "bash"                   About an hour ago   Up About an hour                                                       infallible_franklin
+be5df9e7fdbc   alpine/git     "git clone https://g…"   About an hour ago   Exited (0) About an hour ago                                           repo
+
+C:\Users\ASUS>docker run -it debian
+root@5586b3fa9f56:/# root@86bdf44d1bd7:/#
+bash: root@86bdf44d1bd7:/#: No such file or directory
+root@5586b3fa9f56:/# pwd
+/
+root@5586b3fa9f56:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@5586b3fa9f56:/# uname -a
+Linux 5586b3fa9f56 5.10.16.3-microsoft-standard-WSL2 #1 SMP Fri Apr 2 22:23:49 UTC 2021 x86_64 GNU/Linux
+root@5586b3fa9f56:/# exit
+exit
+
+C:\Users\ASUS>
+
+

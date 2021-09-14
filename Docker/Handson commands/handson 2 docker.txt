@@ -1,0 +1,112 @@
+Microsoft Windows [Version 10.0.19042.1165]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\ASUS>docker pull nginx:1.17.5
+1.17.5: Pulling from library/nginx
+8d691f585fa8: Pull complete
+5b07f4e08ad0: Pull complete
+abc291867bca: Pull complete
+Digest: sha256:922c815aa4df050d4df476e92daed4231f466acc8ee90e0e774951b0fd7195a4
+Status: Downloaded newer image for nginx:1.17.5
+docker.io/library/nginx:1.17.5
+
+C:\Users\ASUS>
+C:\Users\ASUS>docker image ls
+REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
+debian       latest    82bd5ee7b1c5   11 days ago     124MB
+alpine/git   latest    b8f176fa3f0d   3 months ago    25.1MB
+nginx        1.17.5    540a289bab6c   23 months ago   126MB
+
+C:\Users\ASUS>docker run --name my-nginx -d -p 8085:80 -v d:\docker-learn\html:/usr/share/nginx/html nginx:1.17.5
+docker: Error response from daemon: mkdir d:: The system cannot find the path specified.
+See 'docker run --help'.
+
+C:\Users\ASUS>docker run --name my-nginx -d -p 8085:80 -v d:\docker-learn\html:/usr/share/nginx/html nginx:1.17
+docker: Error response from daemon: mkdir d:: The system cannot find the path specified.
+See 'docker run --help'.
+
+C:\Users\ASUS>
+C:\Users\ASUS>
+C:\Users\ASUS>
+C:\Users\ASUS>
+C:\Users\ASUS>
+C:\Users\ASUS>
+C:\Users\ASUS>
+C:\Users\ASUS>docker run --name my-nginx -d -p 8085:80 -v d:\docker-learn\html:/usr/share/nginx/html nginx:1.17.5
+docker: Error response from daemon: mkdir d:: The system cannot find the path specified.
+See 'docker run --help'.
+
+C:\Users\ASUS>docker run --name my-nginx -d -p 8085:80 -v C:\docker-learn\html:/usr/share/nginx/html nginx:1.17.5
+374fdf82e90e9c92f6db876706e84653990936455437c27f1051649760084f69
+
+C:\Users\ASUS>docker container lsdocker container ls
+
+Usage:  docker container COMMAND
+
+Manage containers
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  exec        Run a command in a running container
+  export      Export a container's filesystem as a tar archive
+  inspect     Display detailed information on one or more containers
+  kill        Kill one or more running containers
+  logs        Fetch the logs of a container
+  ls          List containers
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  prune       Remove all stopped containers
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  run         Run a command in a new container
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  wait        Block until one or more containers stop, then print their exit codes
+
+Run 'docker container COMMAND --help' for more information on a command.
+
+C:\Users\ASUS>docker stop my-nginx
+my-nginx
+
+C:\Users\ASUS>docker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS          PORTS     NAMES
+600abfbf138f   debian    "bash"    45 minutes ago   Up 45 minutes             infallible_franklin
+
+C:\Users\ASUS>docker container ls -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED             STATUS                         PORTS     NAMES
+374fdf82e90e   nginx:1.17.5   "nginx -g 'daemon of…"   3 minutes ago       Exited (0) 48 seconds ago                my-nginx
+99b32561f8e2   debian         "bash"                   39 minutes ago      Exited (0) 31 minutes ago                lucid_hopper
+600abfbf138f   debian         "bash"                   45 minutes ago      Up 45 minutes                            infallible_franklin
+be5df9e7fdbc   alpine/git     "git clone https://g…"   About an hour ago   Exited (0) About an hour ago             repo
+C:\Users\ASUS>docker start my-nginx
+my-nginx
+
+C:\Users\ASUS>FROM nginx:1.17.5
+'FROM' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\ASUS>
+C:\Users\ASUS>COPY home.html /usr/share/nginx/htmlFROM nginx:1.17.5
+The system cannot find the file specified.
+
+C:\Users\ASUS>
+C:\Users\ASUS>COPY home.html /usr/share/nginx/html
+The system cannot find the file specified.
+
+C:\Users\ASUS>docker build
+"docker build" requires exactly 1 argument.
+See 'docker build --help'.
+
+Usage:  docker build [OPTIONS] PATH | URL | -
+
+Build an image from a Dockerfile
+
